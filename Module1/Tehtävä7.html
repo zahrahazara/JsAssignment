@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä7</title>
+</head>
+<body>
+ <label for="num-rolls">Number of dice rolls:</label>
+    <input type="number" id="num-rolls" />
+    <button onclick="rollDice()">Roll Dice</button>
+    <p id="dice-results"></p>
+    <script>
+      'use strict';
+      const rollDice = () => {
+        const numRolls = parseInt(document.getElementById("num-rolls").value);
+        let diceSum = 0;
+        let results = "";
+        for (let i = 0; i < numRolls; i++) {
+          const roll = Math.floor(Math.random() * 6) + 1;
+          results += `Roll ${i+1}: ${roll}<br>`;
+          diceSum += roll;
+        }
+        results += `Total sum: ${diceSum}`;
+        document.getElementById("dice-results").innerHTML = results;
+      }
+    </script>
+
+</body>
+</html>

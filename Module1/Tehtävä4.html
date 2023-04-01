@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä4</title>
+</head>
+<body>
+<script>
+    'use strict';
+		// Prompt for the student's name
+    let name = prompt("What is your name?");
+
+		// Generate a random number between 1 and 4
+    let randomNumber = Math.floor(Math.random() * 4) + 1;
+
+		// Assign a house based on the random number
+    let house;
+    switch(randomNumber) {
+      case 1:
+        house = "Gryffindor";
+        break;
+      case 2:
+        house = "Slytherin";
+        break;
+      case 3:
+        house = "Hufflepuff";
+        break;
+      case 4:
+        house = "Ravenclaw";
+        break;
+      default:
+        house = "Error";
+        break;
+		}
+
+		// Print the sorting message to the HTML document
+		document.write("<h1>Sorting Hat Results:</h1>");
+		document.write("<p>" + name + ", you are " + house + ".</p>");
+</script>
+
+</body>
+</html>

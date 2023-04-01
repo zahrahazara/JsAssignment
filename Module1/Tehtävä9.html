@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä5</title>
+</head>
+   <script>
+      'use strict';
+      function checkPrime() {
+        // Get the number from the user input field
+        const number = document.getElementById("number").value;
+
+        // Check if the number is a prime number
+        let isPrime = true;
+        for (let i = 2; i < number; i++) {
+          if (number % i === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+
+        // Output the result to the result area
+        const resultArea = document.getElementById("result");
+        if (isPrime) {
+          resultArea.innerHTML = number + " is a prime number.";
+        } else {
+          resultArea.innerHTML = number + " is not a prime number.";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Prime Number Checker</h1>
+    <p>Enter an integer:</p>
+    <input type="number" id="number">
+    <button onclick="checkPrime()">Check</button>
+    <p id="result"></p>
+
+</body>
+</html>

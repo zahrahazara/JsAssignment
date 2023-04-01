@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä8</title>
+</head>
+<body>
+<h1>Leap Year Finder</h1>
+    <form>
+      <label for="start-year">Start Year:</label>
+      <input type="number" id="start-year" />
+      <label for="end-year">End Year:</label>
+      <input type="number" id="end-year" />
+      <button type="button" onclick="findLeapYears()">Find Leap Years</button>
+    </form>
+    <ul id="leap-years-list"></ul>
+    <script>
+      'use strict';
+      const findLeapYears = () => {
+        const startYear = parseInt(document.getElementById("start-year").value);
+        const endYear = parseInt(document.getElementById("end-year").value);
+        let leapYears = [];
+        for (let year = startYear; year <= endYear; year++) {
+          if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+            leapYears.push(year);
+          }
+        }
+        const leapYearsList = document.getElementById("leap-years-list");
+        leapYearsList.innerHTML = "";
+        leapYears.forEach(year => {
+          const listItem = document.createElement("li");
+          listItem.innerText = year;
+          leapYearsList.appendChild(listItem);
+        });
+      }
+    </script>
+
+</body>
+</html>
