@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä4</title>
+    <script src="tehtävä4.js" defer></script>
+</head>
+<body>
+    <h1>Number Input</h1>
+    <p>Enter a series of numbers, one at a time. When you are finished, enter 0.</p>
+    <input type="number" id="number-input">
+    <button onclick="addNumber()">Add Number</button>
+    <button onclick="displayNumbers()">Display Numbers</button>
+    <p id="number-list"></p>
+
+    <script>
+      'use strict';
+      const numbers = [];
+
+      function addNumber() {
+        const input = parseInt(document.getElementById("number-input").value);
+        if (input !== 0 && !isNaN(input)) {
+          numbers.push(input);
+          document.getElementById("number-input").value = "";
+        }
+      }
+
+      function displayNumbers() {
+        const sortedNumbers = numbers.sort((a, b) => b - a);
+        let output = "The given numbers are: ";
+        for (let i = 0; i < sortedNumbers.length; i++) {
+          output += sortedNumbers[i] + " ";
+        }
+        document.getElementById("number-list").textContent = output;
+      }
+    </script>
+</body>
+</html>

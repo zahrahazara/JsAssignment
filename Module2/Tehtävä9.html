@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä9</title>
+</head>
+<body>
+    <h1>Even Numbers</h1>
+    <script>
+      'use strict';
+		function even(numbers) {
+			let evenNumbers = [];
+			for (let i = 0; i < numbers.length; i++) {
+				if (numbers[i] % 2 === 0) {
+					evenNumbers.push(numbers[i]);
+				}
+			}
+			return evenNumbers;
+		}
+
+		let originalArr = [2, 7, 4];
+		let evenArr = even(originalArr);
+
+		document.write("<p>Original Array: " + originalArr.join(", ") + "</p>");
+		document.write("<p>Even Numbers Array: " + evenArr.join(", ") + "</p>");
+    </script>
+</body>
+</html>

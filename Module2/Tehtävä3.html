@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä3</title>
+</head>
+<body>
+    <script>
+      'use strict';
+      let participants = [];
+
+      // prompt user for names of participants
+      for (let i = 0; i < 6; i++) {
+        let name = prompt(`Enter name of participant ${i+1}:`);
+        participants.push(name);
+      }
+
+      // sort participants in reverse alphabetical order
+      participants.sort().reverse();
+
+      // create a new unordered list element
+      let ul = document.createElement('ul');
+
+      // add each participant to the unordered list
+      for (let participant of participants) {
+        let li = document.createElement('li');
+        li.textContent = participant;
+        ul.appendChild(li);
+      }
+
+      // add the unordered list to the webpage
+      document.body.appendChild(ul);
+    </script>
+
+</body>
+</html>

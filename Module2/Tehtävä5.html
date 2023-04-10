@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä5</title>
+</head>
+<body>
+    <h1>Number Sorter</h1>
+    <label for="number-input">Enter a number:</label>
+    <input type="number" id="number-input" />
+    <button id="submit-button">Submit</button>
+    <ul id="number-list"></ul>
+
+    <script>
+      'use strict';
+      const numbers = [];
+      const numberInput = document.getElementById("number-input");
+      const submitButton = document.getElementById("submit-button");
+      const numberList = document.getElementById("number-list");
+
+      submitButton.addEventListener("click", function () {
+        const inputNumber = parseInt(numberInput.value);
+
+        if (numbers.includes(inputNumber)) {
+          alert("Number already given. Exiting program.");
+          return;
+        }
+
+        numbers.push(inputNumber);
+
+        const li = document.createElement("li");
+        li.textContent = inputNumber;
+        numberList.appendChild(li);
+
+        numbers.sort(function (a, b) {
+          return a - b;
+        });
+
+        console.log(numbers);
+      });
+    </script>
+
+</body>
+</html>
