@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä4</title>
+    <script> scr= "tehtävä4.js"</script>
+</head>
+<body>
+  <h1>Task 4</h1>
+  <select id="target">
+
+  </select>
+
+  <script>
+    const students = [
+        { id: "2345768", name: "John" },
+        { id: "2134657", name: "Paul" },
+        { id: "5423679", name: "Jones" },
+    ];
+    const target = document.getElementById("target");
+
+    for (let i = 0; i < students.length; i++) {
+      let option = document.createElement("option");
+      option.value = students[i].id;
+      option.textContent = students[i].name;
+      target.appendChild(option);
+    }
+  </script>
+
+</body>
+</html>

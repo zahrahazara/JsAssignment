@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä7</title>
+    <script src="tehtävä7.js" defer></script>
+</head>
+</head>
+<body>
+    <p id="trigger">Hover over me!</p>
+    <img id="target" src="image/picA.jpg" alt="Original Image">
+
+<script>
+  const trigger = document.getElementById("trigger");
+  const target = document.getElementById("target");
+  const originalSrc = target.src;
+
+  trigger.addEventListener("mouseover", () => {
+    target.src = "image/picB.jpg";
+  });
+
+  trigger.addEventListener("mouseout", () => {
+    target.src = originalSrc;
+  });
+</script>
+
+
+</body>
+</html>

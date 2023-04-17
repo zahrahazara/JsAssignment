@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="1.css" rel="stylesheet">
+    <title>Tehtävä1</title>
+    <script src="tehtävä1.js" defer></script>
+
+</head>
+
+<body>
+    <h1>Task 1</h1>
+    <ul id="target"></ul>
+
+    <script>
+      const listItems = `
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+      `;
+
+      // Get the target element
+      const target = document.getElementById("target");
+
+      // Add the list items to the target element
+      target.innerHTML = listItems;
+      target.classList.add("my-list");
+
+    </script>
+</body>
+</html>

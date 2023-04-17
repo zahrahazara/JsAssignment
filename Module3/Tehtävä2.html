@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="2.css" rel="stylesheet">
+    <title>Tehtävä2</title>
+    <script src="tehtävä2.js" defer></script>
+
+</head>
+<body>
+    <h1>Task 2</h1>
+    <ul id="target"></ul>
+    <script>
+      const target = document.querySelector("#target");
+
+      const listItem1 = document.createElement("li");
+      listItem1.textContent = "First item";
+
+      const listItem2 = document.createElement("li");
+      listItem2.textContent = "Second item";
+      listItem2.classList.add("my-item");
+
+      const listItem3 = document.createElement("li");
+      listItem3.textContent = "Third item";
+
+      target.appendChild(listItem1);
+      target.appendChild(listItem2);
+      target.appendChild(listItem3);
+    </script>
+
+</body>
+</html>
