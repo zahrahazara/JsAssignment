@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 5</title>
+    <script src="tehtävä5.js" defer></script>
+    <h1>Chuck Norris Jokes</h1>
+    <button onclick="getChuckNorrisJoke()">Get a random joke</button>
+    <div id="joke"></div>
+
+</head>
+<body>
+  <script>
+  function getChuckNorrisJoke() {
+      fetch('https://api.chucknorris.io/jokes/random')
+        .then(response => response.json())
+        .then(data => {
+          const jokeElement = document.getElementById('joke');
+          jokeElement.innerText = data.value;
+        })
+        .catch(error => console.error(error));
+    }
+  </script>
+</body>
+</html>

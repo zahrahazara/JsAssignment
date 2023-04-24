@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 1</title>
+</head>
+<body>
+<form action="https://api.tvmaze.com/search/shows">
+  <input id="query" name="q" type="text">
+  <input type="submit" value="Search">
+</form>
+   <script>
+      const form = document.getElementById('search-form');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const query = document.getElementById('query').value;
+        const url = `https://api.tvmaze.com/search/shows?q=${query}`;
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error(error);
+        }
+      });
+    </script>
+
+</body>
+</html>
