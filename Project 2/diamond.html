@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
     <link href="Diamond.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
-    <script src="diamond.js" defer></script>
+    <script src="main.js" defer></script>
     <title>The Diamond in the Europe</title>
 </head>
 <body>
 <div class="container">
     <header class="page-header">
-        <h1 class="page-titlr">
+        <h1 class="page-title">
             <ion-icon name="diamond-outline"></ion-icon>&nbsp;The diamond&nbsp;
         </h1>
         <nav>
@@ -41,7 +42,7 @@
         </div>
         <div class="map-container">
             <div id="map">
-                <img src="img/Europe.svg" alt="map of europe">
+                <img src="img/fi.svg" alt="map of europe">
             </div>
         </div>
         <div class="boxes">
@@ -67,7 +68,7 @@
                 <table border="1" id="distance-table">
                     <tr>
                         <td>Etäisyys timantista: <span id="#map"></span></td>
-                        <td>Sijainti: <span id="location"></span> </td>
+                        <td>Sijainti: <span id="location"></span></td>
                     </tr>
                 </table>
             </section>
@@ -75,10 +76,12 @@
             <section class="box">
                 <table border="1" id="continue-table">
                     <tr>
-                        <td>Jatka peliä:</td>
-                         <button id="continue-button">Lennä!</button>
-                        <td>Voita km!</td>
-                         <button id="lasku-button">voita!</button>
+                        <td>Jatka peliä:
+                            <button id="continue-button">Lennä!</button>
+                        </td>
+                        <td>Voita km!
+                            <button id="lasku-button">voita!</button>
+                        </td>
                     </tr>
                 </table>
             </section>
@@ -86,6 +89,14 @@
 
     </main>
 </div>
-
+<div id="player-modal" class="modal">
+    <div class="modal-content">
+        <form id="player-form">
+            <label for="player-name">Enter your name:</label>
+            <input type="text" id="player-name" name="player-name" required>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
